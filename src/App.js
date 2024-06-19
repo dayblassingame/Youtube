@@ -1,14 +1,11 @@
 import React from "react";
-
+import profilePic from './images/profileImg.jpg'
+import Header from "./Header";
 export default function App(){
 
     return(
         <div>
-            <header>
-                <icon id='menu'></icon>
-                <img id="logo" />
-                <input id='search'/>
-            </header>
+            <Header profileImg = {profilePic}/>
             <nav>
                 <ul>
                 </ul>
