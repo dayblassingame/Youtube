@@ -1,0 +1,111 @@
+//header styles
+$border-radius: 20px;
+
+.yt-c-header_wrapper{
+    display: block;
+    position: fixed;
+    height: 56px;
+    width: 100vw;
+
+    padding: $padding-small $padding-large;
+
+    .yt-c-header{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: middle;
+
+        height: inherit;
+        width: auto;
+        padding: $padding-small $padding-none;
+
+        div{
+            display: flex;
+
+            &#start{
+                height: inherit;
+                width: 150px;
+                
+                a{
+                    display: inline-block;
+                    height: 40px;
+                    margin-left: $margin-medium;
+                    padding: $padding-small $padding-none;
+                    overflow: hidden;
+
+                    img{
+                        height: 100%;
+                        width: auto;
+                        vertical-align: middle;
+                    }
+                }
+            }
+
+            &#center{
+                width: 50%;
+
+                input{
+                    min-width: 50px;
+                    height: 40px;
+                    padding: $padding-small $padding-medium;
+                    flex-grow: 0.9;
+                    border: 1px solid #bebdbd;
+                    border-radius: 20px;
+                    border-top-right-radius: 0px;
+                    border-bottom-right-radius: 0px;
+
+                    color: rgb(17, 17, 17);
+
+                }
+
+                #voiceSearch{
+                    margin-left: $margin-large;
+                }
+            }
+
+            &#end{
+                justify-content: space-evenly;
+                width: 150px;
+    
+                img{
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+
+        }
+
+        button{
+            display: inline-block;
+            height: 40px;
+            width: 40px;
+
+            background-color: transparent;
+
+            border-radius: $border-radius;
+            border: 0px solid transparent;
+            overflow: hidden;
+
+            #icon{
+                height: 20px;
+                width: 20px;
+            }
+
+            &#searchBtn, &#voiceSearch{
+                background-color: #f1f1f1;
+            }
+
+            &#searchBtn{
+                width: 70px;
+                border: 1px solid #bebdbd;
+                border-radius: 20px;
+                border-top-left-radius: 0px !important;
+                border-bottom-left-radius: 0px !important;
+            }
+
+            &:hover{
+                background-color: (#dfdddd);
+            }
+        }
+    }
+}

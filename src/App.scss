@@ -1,0 +1,8 @@
+//import base stylesheets
+@import './stylesheets/base/reset.scss';
+@import './stylesheets/base/typography.scss';
+
+//import utility stylesheets
+@import './stylesheets/utilities/utilities.scss';
+//import component stylesheets
+@import './stylesheets/components/_header.scss';

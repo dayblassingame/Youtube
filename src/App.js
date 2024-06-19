@@ -1,4 +1,5 @@
 import React from "react";
+import './App.scss';
 import profilePic from './images/profileImg.jpg'
 import Header from "./Header";
 export default function App(){
