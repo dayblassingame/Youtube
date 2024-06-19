@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Logo from './images/youtubeLogo.png'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faMicrophone, faMagnifyingGlass, faVideo, faBell} from "@fortawesome/free-solid-svg-icons";
+import { faBars, faMicrophone, faMagnifyingGlass, faVideo, faBell, faPlay, faTowerBroadcast} from "@fortawesome/free-solid-svg-icons";
 
 export default function Header({profileImg}){
     const [search, setSearch] = useState('');
@@ -9,20 +9,24 @@ export default function Header({profileImg}){
     return(
         <header>
             <span id='start'>
-                <button><FontAwesomeIcon icon={faBars}/></button>
-                <img id='logo' alt="Youtube Logo" src={Logo}/>
+                <button><FontAwesomeIcon icon={faBars} alt='menu'/></button>
+                <a href='#'><img id='logo' alt="Youtube Home" title='Youtube Home' src={Logo}/></a>
             </span>
             
             <span id='center'>
                 <input id='searchInput' type="text" value={search} onChange={(e)=> setSearch(e.target.value)}/>
-                <button id='searchBtn'><FontAwesomeIcon icon={faMagnifyingGlass}/></button>
-                <button id='voiceSearch'><FontAwesomeIcon icon={faMicrophone}/></button>
+                <button id='searchBtn' alt='search' title='Search'><FontAwesomeIcon icon={faMagnifyingGlass}/></button>
+                <button id='voiceSearch' alt='search with your voice' title='Search with your voice'><FontAwesomeIcon icon={faMicrophone}/></button>
             </span>
 
             <span id='end'>
-                <button><FontAwesomeIcon icon={faVideo}/></button>
-                <button><FontAwesomeIcon icon={faBell}/></button>
-                <button><img src={profileImg} alt='profilePic'/></button>
+                <button><FontAwesomeIcon icon={faVideo} alt='create' title='Create'/></button>
+                <ul>
+                    <li alt='upload video'><a><FontAwesomeIcon icon={faPlay} />Upload Video</a></li>
+                    <li alt='go live'><a><FontAwesomeIcon icon={faTowerBroadcast}/> Go Live</a></li>
+                </ul>
+                <button><FontAwesomeIcon icon={faBell} alt='notifications' title='Notifications'/></button>
+                <button><img src={profileImg} alt='profile picture'/></button>
             </span>
         </header>
     )
