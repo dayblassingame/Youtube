@@ -5,6 +5,11 @@ import { faBars, faMicrophone, faMagnifyingGlass, faVideo, faBell, faPlay, faTow
 
 export default function Header({profileImg}){
     const [search, setSearch] = useState('');
+    const [menu, setMenu] = useState({
+        create: false
+    })
+
+    const {create} = menu;
 
     return(
         <div className='yt-c-header_wrapper'>
@@ -21,15 +26,15 @@ export default function Header({profileImg}){
                 </div>
 
                 <div id='end'>
-                    <button><FontAwesomeIcon id='icon' icon={faVideo} alt='create' title='Create'/></button>
-                    <ul className="display_none">
-                        <li alt='upload video'><a><FontAwesomeIcon id='icon' icon={faPlay} />Upload Video</a></li>
-                        <li alt='go live'><a><FontAwesomeIcon id='icon' icon={faTowerBroadcast}/> Go Live</a></li>
-                    </ul>
+                    <button><FontAwesomeIcon id='icon' icon={faVideo} alt='create' title='Create' onClick={()=> setMenu({create: !create})}/></button>
                     <button><FontAwesomeIcon id='icon' icon={faBell} alt='notifications' title='Notifications'/></button>
                     <button><img id='profileimg' src={profileImg} alt='profile picture'/></button>
                 </div>
             </header>
+            <ul className= {create ? 'yt-c-header_dropdown' : 'display_none'}>
+                <li alt='upload video'><a><FontAwesomeIcon id='icon' icon={faPlay} />Upload Video</a></li>
+                <li alt='go live'><a><FontAwesomeIcon id='icon' icon={faTowerBroadcast}/> Go Live</a></li>
+            </ul>
         </div>
     )
 }
