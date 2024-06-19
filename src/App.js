@@ -7,18 +7,16 @@ export default function App(){
             <header>
                 <icon id='menu'></icon>
                 <img id="logo" />
-                <input id='search' type='text'/>
+                <input id='search'/>
             </header>
             <nav>
                 <ul>
-                    <li id='navLink'></li>
                 </ul>
                 <footer/>
             </nav>
             <main>
                 <div id='filters'>
                     <ul>
-                        <li id='filter1'></li>
                     </ul>
                 </div>
                 <div id='video list'>
