@@ -37,7 +37,7 @@ export default function Header({profileImg}){
                 <li alt='upload video'><a><FontAwesomeIcon id='icon' icon={faPlay} />Upload Video</a></li>
                 <li alt='go live'><a><FontAwesomeIcon id='icon' icon={faTowerBroadcast}/> Go Live</a></li>
             </ul>
-            {notifications ? <Notifications/> : ''}
+            {notifications ? <Notifications className={notifications ? '' : 'display_none'}/> : ''}
         </div>
     )
 }

@@ -5,15 +5,18 @@ import React from "react";
 export default function Notifications(){
 
     return(
-        <div>
-            <div>
-                <h5>Notifications</h5>
-                <a><FontAwesomeIcon icon={faGear} /></a>
+        <div className="yt-c-notifications_wrapper">
+            <div className="yt-c-notifications_header">
+                <label>Notifications</label>
+                <a><FontAwesomeIcon id='icon' icon={faGear} /></a>
             </div>
-            <div>
-                <FontAwesomeIcon icon={faBell}/>
-                <h6>Your notifications live here</h6>
-                <p>Subscribe to your favorite channels to get notified about their latest videos.</p>
+            <div className="yt-c-notifications_body">
+                <div className='yt-c-notifications_body_default'>
+                    <FontAwesomeIcon id='icon' icon={faBell}/>
+                    <h5>Your notifications live here</h5>
+                    <p>Subscribe to your favorite channels to get notified about their latest videos.</p>
+                </div>
+            
             </div>
         </div>
     )

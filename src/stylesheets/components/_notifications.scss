@@ -1,0 +1,71 @@
+.yt-c-notifications_wrapper{
+    flex-direction: column;
+
+    position: fixed;
+    top: $margin-small;
+    left: calc(100vw - $margin-large - 600px);
+    width: 480px;
+    height: calc(100vh - $margin-small);
+
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0px 5px 8px 5px rgb(238, 237, 237);
+
+    font-family: $font-family;
+
+    .yt-c-notifications_header{
+        padding: $padding-medium $padding-large;
+
+        border-bottom: 1px solid $grey;
+        font-size: 18px;
+        line-height: 28px;
+
+        label{
+            display: inline;
+            font-weight: 400; 
+        }
+
+        a{
+            float: right;
+
+            #icon{
+                height: 20px;
+                width: 20px;  
+            }
+        }
+    }
+
+    .yt-c-notifications_body{
+        display: flex;
+        flex-direction: column;
+        max-height: 400px;
+        padding: $padding-small $padding-large;
+        align-items: center;
+
+        .yt-c-notifications_body_default{
+            display: block;
+            align-items: center;
+            margin: auto;
+            width: 65%;
+            text-align: center;
+
+
+            #icon{
+                height: 100px;
+                width: auto;
+                margin-bottom: $margin-extralarge;
+            }
+
+            h5{
+                margin-bottom: $margin-small;
+                font-size: 17px;
+                font-weight: 600;
+            }
+
+            p{
+                font-size: 15px;
+                line-height: 21px;
+            }
+        }
+    }
+}
