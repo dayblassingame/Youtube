@@ -24,7 +24,7 @@ $border-radius: 20px;
 
             &#start{
                 height: inherit;
-                width: 150px;
+                width: 200px;
                 
                 a{
                     display: inline-block;
@@ -42,20 +42,27 @@ $border-radius: 20px;
             }
 
             &#center{
-                width: 50%;
+                display: flex;
+                width: 20%;
+                flex-grow: 0.7;
 
                 input{
-                    min-width: 50px;
+                    width: 20px;
                     height: 40px;
                     padding: $padding-small $padding-medium;
                     flex-grow: 0.9;
                     border: 1px solid #bebdbd;
+                    border-right: 0.5px;
                     border-radius: 20px;
                     border-top-right-radius: 0px;
                     border-bottom-right-radius: 0px;
-
+                    box-shadow: inset 1px 1px 1px $grey;
+                    font-size: 16px;
                     color: rgb(17, 17, 17);
 
+                    &:focus{
+                        outline: 1px solid blue;
+                    }
                 }
 
                 #voiceSearch{
@@ -92,7 +99,11 @@ $border-radius: 20px;
             }
 
             &#searchBtn, &#voiceSearch{
-                background-color: #f1f1f1;
+                background-color: $lightgrey;
+
+                &:hover{
+                    background-color: $grey;
+                }
             }
 
             &#searchBtn{
@@ -104,7 +115,7 @@ $border-radius: 20px;
             }
 
             &:hover{
-                background-color: ($lightgrey);
+                background-color: ($grey);
             }
         }
     }
@@ -136,7 +147,7 @@ $border-radius: 20px;
         }
 
         &:hover{
-            background-color: $lightgrey;
+            background-color: $grey;
         }
     }
 }

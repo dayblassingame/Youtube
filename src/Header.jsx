@@ -2,14 +2,16 @@ import React, { useState } from "react";
 import Logo from './images/youtubeLogo.png'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faMicrophone, faMagnifyingGlass, faVideo, faBell, faPlay, faTowerBroadcast} from "@fortawesome/free-solid-svg-icons";
+import Notifications from "./Notifications";
 
 export default function Header({profileImg}){
     const [search, setSearch] = useState('');
     const [menu, setMenu] = useState({
-        create: false
+        create: false,
+        notifications: false
     })
 
-    const {create} = menu;
+    const {create, notifications} = menu;
 
     return(
         <div className='yt-c-header_wrapper'>
@@ -27,7 +29,7 @@ export default function Header({profileImg}){
 
                 <div id='end'>
                     <button><FontAwesomeIcon id='icon' icon={faVideo} alt='create' title='Create' onClick={()=> setMenu({create: !create})}/></button>
-                    <button><FontAwesomeIcon id='icon' icon={faBell} alt='notifications' title='Notifications'/></button>
+                    <button><FontAwesomeIcon id='icon' icon={faBell} alt='notifications' title='Notifications' onClick={()=> setMenu({notifications: !notifications})}/></button>
                     <button><img id='profileimg' src={profileImg} alt='profile picture'/></button>
                 </div>
             </header>
@@ -35,6 +37,7 @@ export default function Header({profileImg}){
                 <li alt='upload video'><a><FontAwesomeIcon id='icon' icon={faPlay} />Upload Video</a></li>
                 <li alt='go live'><a><FontAwesomeIcon id='icon' icon={faTowerBroadcast}/> Go Live</a></li>
             </ul>
+            {notifications ? <Notifications/> : ''}
         </div>
     )
 }
