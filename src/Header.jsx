@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Logo from './images/youtubeLogo.png'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faMicrophone, faMagnifyingGlass, faVideo, faBell, faPlay, faTowerBroadcast} from "@fortawesome/free-solid-svg-icons";
@@ -11,11 +11,25 @@ export default function Header({profileImg}){
         notifications: false
     })
 
+    const [popupSelected, setPopupSelected] = useState('');
+
     const {create, notifications} = menu;
+
+    useEffect(() =>{
+       const main = document.getElementById('main')
+       body.addEventListener('click', ()=> closePopup)
+    },[])
+
+    const closePopup = () => {
+        if(create)
+            setMenu({create: false})
+        if(notifications)
+            setMenu({notifications: false})
+    }
 
     return(
         <div className='yt-c-header_wrapper'>
-            <header className='yt-c-header'>
+            <header className='yt-c-header' onClick = {closePopup}>
                 <div id='start'>
                     <button><FontAwesomeIcon id='icon' icon={faBars} alt='menu'/></button>
                     <a href='#'><img id='logo' alt="Youtube Home" title='Youtube Home' src={Logo}/></a>
@@ -29,13 +43,13 @@ export default function Header({profileImg}){
 
                 <div id='end'>
                     <button><FontAwesomeIcon id='icon' icon={faVideo} alt='create' title='Create' onClick={()=> setMenu({create: !create})}/></button>
-                    <button><FontAwesomeIcon id='icon' icon={faBell} alt='notifications' title='Notifications' onClick={()=> setMenu({notifications: !notifications})}/></button>
+                    <button><FontAwesomeIcon id='icon' icon={faBell} alt='notifications' title='Notifications' onClick={()=> setMenu({notifications: !notifications })}/></button>
                     <button><img id='profileimg' src={profileImg} alt='profile picture'/></button>
                 </div>
             </header>
-            <ul className= {create ? 'yt-c-header_dropdown' : 'display_none'}>
-                <li alt='upload video'><a><FontAwesomeIcon id='icon' icon={faPlay} />Upload Video</a></li>
-                <li alt='go live'><a><FontAwesomeIcon id='icon' icon={faTowerBroadcast}/> Go Live</a></li>
+            <ul name='createPopup' className= {create ? 'yt-c-header_dropdown' : 'display_none'}>
+                <li name='createPopup' alt='upload video'><a><FontAwesomeIcon id='icon' icon={faPlay} name='createPopup'/>Upload Video</a></li>
+                <li name='createPopup' alt='go live'><a><FontAwesomeIcon id='icon' icon={faTowerBroadcast} name='createPopup'/> Go Live</a></li>
             </ul>
             {notifications ? <Notifications className={notifications ? '' : 'display_none'}/> : ''}
         </div>

@@ -5,14 +5,14 @@ import Header from "./Header";
 export default function App(){
 
     return(
-        <div>
+        <div id='body'>
             <Header profileImg = {profilePic}/>
             <nav>
                 <ul>
                 </ul>
                 <footer/>
             </nav>
-            <main>
+            <main id='main'>
                 <div id='filters'>
                     <ul>
                     </ul>
