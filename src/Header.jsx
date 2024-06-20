@@ -11,13 +11,11 @@ export default function Header({profileImg}){
         notifications: false
     })
 
-    const [popupSelected, setPopupSelected] = useState('');
-
     const {create, notifications} = menu;
 
     useEffect(() =>{
        const main = document.getElementById('main')
-       body.addEventListener('click', ()=> closePopup)
+       main.addEventListener('click', ()=> closePopup)
     },[])
 
     const closePopup = () => {
