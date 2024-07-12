@@ -2,17 +2,15 @@ import React from "react";
 import './App.scss';
 import profilePic from './images/profileImg.jpg'
 import Header from "./Header";
+import Nav from "./Nav";
+import Carousel from "./Carousel";
 export default function App(){
 
     return(
         <div id='body'>
             <Header profileImg = {profilePic}/>
-            <nav>
-                <ul>
-                </ul>
-                <footer/>
-            </nav>
             <main id='main'>
+                
                 <div id='filters'>
                     <ul>
                     </ul>

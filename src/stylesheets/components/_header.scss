@@ -1,13 +1,18 @@
 //header styles
 $border-radius: 20px;
+$headerHeight: 56px;
+
+.yt-c-header_container{
+    display: flex;
+}
 
 .yt-c-header_wrapper{
     display: block;
     position: fixed;
-    height: 56px;
+    height: $headerHeight;
     width: 100vw;
-
-    padding: $padding-small $padding-large;
+    background-color: white;
+    padding: $padding-small $padding-medium;
 
     .yt-c-header{
         display: flex;
@@ -46,23 +51,53 @@ $border-radius: 20px;
                 width: 20%;
                 flex-grow: 0.7;
 
-                input{
-                    width: 20px;
-                    height: 40px;
-                    padding: $padding-small $padding-medium;
+                form{
                     flex-grow: 0.9;
+                    height: 40px;
+                    overflow: hidden;
+                    padding: $padding-none $padding-medium;
+
                     border: 1px solid #bebdbd;
                     border-right: 0.5px;
                     border-radius: 20px;
                     border-top-right-radius: 0px;
                     border-bottom-right-radius: 0px;
                     box-shadow: inset 1px 1px 1px $grey;
-                    font-size: 16px;
-                    color: rgb(17, 17, 17);
 
-                    &:focus{
-                        outline: 1px solid blue;
+                    &:focus-within{
+                        border: 0.5px solid blue;
+
+                        #icon{
+                            display: inline-block;
+                            padding: $padding-none $padding-medium;
+                        }
                     }
+                }
+
+                .searchContainer{
+                    display: flex;
+                    align-items: center;
+
+                    #icon{
+                        display: none;
+                    }
+
+                    input{
+                        width: 20px;
+                        height: 38px;
+                        flex-grow: 0.9;
+                        background-color: transparent;
+                        border: none;
+                        font-size: 16px;
+                        color: rgb(17, 17, 17);
+
+    
+                        &:focus{
+                            outline: none;
+                        }
+                }
+
+
                 }
 
                 #voiceSearch{
